@@ -25,7 +25,7 @@ An extended project: [Monsoon - a PHP Content Management System (CMS)](https://b
 * [Flask (Python)](http://flask.pocoo.org/)
 * [Lumen (PHP)](https://lumen.laravel.com/)
 
-## Server & Isomorphic
+## Server Client
 
 1. [Nuxt (JavaScript)](https://nuxtjs.org/), or:
 
