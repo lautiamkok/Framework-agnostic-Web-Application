@@ -1,0 +1,9 @@
+vendor
+log
+composer.lock
+node_modules
+build
+npm-debug.log
+.nuxt
+.idea
+*.iml

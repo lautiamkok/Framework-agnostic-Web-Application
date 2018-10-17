@@ -1,0 +1,22 @@
+{
+    "require": {
+        "slim/slim": "^3.11.0",
+        "monolog/monolog": "^1.23.0",
+        "league/container": "^3.2.2",
+        "catfan/Medoo": "^1.6",
+        "ramsey/uuid": "^3.8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Spectre\\": [
+                "core/default/",
+                "module/default/",
+                "module/local/"
+            ],
+            "YourCustomNamespace\\": [
+                "core/local/",
+                "module/local/"
+            ]
+        }
+    }
+}
