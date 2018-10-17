@@ -12,6 +12,10 @@ A fundamental concept for creating a framework-agnostic web application. Read th
 
 * [Creating a Nuxt application with Python frameworks](https://www.codementor.io/lautiamkok/creating-a-nuxt-application-with-python-frameworks-kd2yjqsfx)
 
+* [Creating a Modular Koa Application](https://www.codementor.io/lautiamkok/creating-a-modular-koa-application-cfprkirld)
+
+* [Creating a Modular Slim Application](https://www.codementor.io/lautiamkok/creating-a-modular-slim-application-gtj9fcxq0)
+
 An extended project: [Monsoon - a PHP Content Management System (CMS)](https://bitbucket.org/lau_tiamkok/monsoon/).
 
 # Requirements
