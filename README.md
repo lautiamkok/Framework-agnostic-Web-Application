@@ -23,7 +23,7 @@ A fundamental concept for creating a framework-agnostic web application. Read th
 * [Flask (Python)](http://flask.pocoo.org/)
 * [Lumen (PHP)](https://lumen.laravel.com/)
 
-## Server Client
+## Server & Isomorphic
 
 1. [Nuxt (JavaScript)](https://nuxtjs.org/), or:
 
