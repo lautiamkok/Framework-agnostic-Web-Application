@@ -1,11 +1,11 @@
 <?php
-namespace Spectre\User\Mapper;
+namespace Spectre\User\Mapper\Delete;
 
 use \Spectre\User\Mapper\Mapper;
 
-class DeleteMapper extends Mapper
+class User extends Mapper
 {
-    public function deleteUser($data = [])
+    public function delete($data = [])
     {
         // Throw error if array is empty.
         if (count($data) === 0) {
@@ -13,6 +13,6 @@ class DeleteMapper extends Mapper
         }
 
         $model = $this->mapObject($data);
-        return $this->gateway->deleteUser($model);
+        return $this->gateway->delete($model);
     }
 }

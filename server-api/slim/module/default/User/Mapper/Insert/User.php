@@ -1,11 +1,11 @@
 <?php
-namespace Spectre\User\Mapper;
+namespace Spectre\User\Mapper\Insert;
 
 use \Spectre\User\Mapper\Mapper;
 
-class InsertMapper extends Mapper
+class User extends Mapper
 {
-    public function insertUser($params = [])
+    public function insert($params = [])
     {
         // Throw error if array is empty.
         if (count($params) === 0) {
@@ -13,6 +13,6 @@ class InsertMapper extends Mapper
         }
 
         $model = $this->mapObject($params);
-        return $this->gateway->insertUser($model);
+        return $this->gateway->insert($model);
     }
 }

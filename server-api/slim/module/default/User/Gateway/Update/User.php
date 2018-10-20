@@ -1,18 +1,20 @@
 <?php
-namespace Spectre\User\Gateway;
+namespace Spectre\User\Gateway\Update;
 
 use \Spectre\User\Gateway\Gateway;
 use \Spectre\User\Model\Model;
 
-class InsertGateway extends Gateway
+class User extends Gateway
 {
-    public function insertUser(Model $user)
+    public function update(Model $user, array $where)
     {
         // Get data from the model.
-        $uuid = $user->getUuid();
         $name = $user->getName();
         $email = $user->getEmail();
-        $createdOn = $user->getCreatedOn();
+        $updatedOn = $user->getUpdatedOn();
+
+        // Get data from the params.
+        $uuid = $where['uuid'];
 
         // Throw if empty.
         if (!$uuid) {
@@ -30,29 +32,27 @@ class InsertGateway extends Gateway
         }
 
         // Throw if empty.
-        if (!$email) {
-            throw new \Exception('$email is empty', 400);
+        if (!$updatedOn) {
+            throw new \Exception('$updatedOn is empty', 400);
         }
 
-        // Throw if empty.
-        if (!$createdOn) {
-            throw new \Exception('$createdOn is empty', 400);
-        }
-
-        // Insert user.
-        // https://medoo.in/api/insert
-        $result = $this->database->insert('user', [
-            'uuid' => $uuid,
-            'name' => $name,
-            'email' => $email,
-            'created_on' => $createdOn
+        // Update user(s).
+        // https://medoo.in/api/update
+        $result = $this->database->update("user", [
+            "name" => $name,
+            "email" => $email,
+            "updated_on" => $updatedOn
+        ], [
+            "uuid" => $uuid
         ]);
 
         // Throw if it fails.
         // Returns the number of rows affected by the last SQL statement.
         if ($result->rowCount() === 0) {
-            throw new \Exception('Insert row failed', 400);
+            throw new \Exception('Update row failed', 400);
         }
+
+        // print_r($this->database->error());
 
         // Return the model if it is OK.
         return $user;

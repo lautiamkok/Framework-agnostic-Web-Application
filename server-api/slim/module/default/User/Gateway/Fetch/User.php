@@ -1,22 +1,12 @@
 <?php
-namespace Spectre\User\Gateway;
+namespace Spectre\User\Gateway\Fetch;
 
 use \Spectre\User\Gateway\Gateway;
 use \Spectre\User\Model\UserModel;
 
-class FetchGateway extends Gateway
+class User extends Gateway
 {
-    public function fetchUsers($columns = [])
-    {
-        // Get user(s).
-        // https://medoo.in/api/select
-        $data = $this->database->select('user', $columns);
-
-        // Return the result.
-        return $data;
-    }
-
-    public function fetchUser($columns = [], $where = [])
+    public function fetch($columns = [], $where = [])
     {
         // Throw error if where search is not provide.
         if (count($where) === 0) {

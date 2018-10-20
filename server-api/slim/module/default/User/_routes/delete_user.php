@@ -6,9 +6,9 @@ use \Psr\Http\Message\ResponseInterface as Response;
 $app->delete('/api/users', function (Request $request, Response $response, $args) {
 
     // Autowiring the controller.
-    $controller = $this->get('Spectre\User\Controller\DeleteController');
+    $controller = $this->get('Spectre\User\Controller\Delete\User');
 
     // Obtain result.
-    $result = $controller->DeleteUser($request);
+    $result = $controller->Delete($request);
     $response->getBody()->write(json_encode($result));
 });

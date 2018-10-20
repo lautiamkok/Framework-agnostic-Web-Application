@@ -1,5 +1,5 @@
 <?php
-namespace Spectre\User\Controller;
+namespace Spectre\User\Controller\Insert;
 
 // PSR 7 standard.
 use \Psr\Http\Message\ServerRequestInterface as Request;
@@ -9,12 +9,12 @@ use \Psr\Http\Message\ResponseInterface as Response;
 use \Ramsey\Uuid\Uuid;
 
 use \Spectre\User\Controller\Controller;
-use \Spectre\User\Gateway\InsertGateway;
-use \Spectre\User\Mapper\InsertMapper;
+use \Spectre\User\Gateway\Insert\User as InsertGateway;
+use \Spectre\User\Mapper\Insert\User as InsertMapper;
 
-class InsertController extends Controller
+class User extends Controller
 {
-    public function insertUser(Request $request)
+    public function insert(Request $request)
     {
         // Get params and validate them here.
         // POST or PUT
@@ -54,7 +54,7 @@ class InsertController extends Controller
 
         $gateway = new InsertGateway($this->database);
         $mapper = new InsertMapper($gateway);
-        $model = $mapper->insertUser([
+        $model = $mapper->insert([
             'uuid' => $uuid,
             'name' => $name,
             'email' => $email,
@@ -66,10 +66,5 @@ class InsertController extends Controller
         ]);
 
         return $model->toArray();
-    }
-
-    public function insertUsers(array $args)
-    {
-        //
     }
 }

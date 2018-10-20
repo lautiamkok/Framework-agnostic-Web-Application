@@ -1,12 +1,12 @@
 <?php
-namespace Spectre\User\Gateway;
+namespace Spectre\User\Gateway\Delete;
 
 use \Spectre\User\Gateway\Gateway;
 use \Spectre\User\Model\Model;
 
-class DeleteGateway extends Gateway
+class User extends Gateway
 {
-    public function deleteUser(Model $user)
+    public function delete(Model $user)
     {
         // Get data from the model.
         $uuid = $user->getUuid();

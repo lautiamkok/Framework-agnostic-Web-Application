@@ -6,9 +6,9 @@ use \Psr\Http\Message\ResponseInterface as Response;
 $app->post('/api/users', function (Request $request, Response $response, $args) {
 
     // Autowiring the controller.
-    $controller = $this->get('Spectre\User\Controller\InsertController');
+    $controller = $this->get('Spectre\User\Controller\Insert\User');
 
     // Obtain result.
-    $result = $controller->insertUser($request);
+    $result = $controller->insert($request);
     $response->getBody()->write(json_encode($result));
 });

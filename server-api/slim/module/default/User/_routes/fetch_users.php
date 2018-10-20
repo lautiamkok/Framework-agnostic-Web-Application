@@ -17,10 +17,10 @@ $app->get('/api/users', function (Request $request, Response $response, $args) {
     // var_dump($foo->getHeight());
 
     // Autowiring the controller.
-    $controller = $this->get('Spectre\User\Controller\FetchController');
+    $controller = $this->get('Spectre\User\Controller\Fetch\Users');
 
     // Obtain result.
-    $users = $controller->fetchUsers($request);
+    $users = $controller->fetch($request);
 
     // Convert timestamp to a local time.
     $timestamp = $this->get('Spectre\Core\Utils\TimestampConvertor');

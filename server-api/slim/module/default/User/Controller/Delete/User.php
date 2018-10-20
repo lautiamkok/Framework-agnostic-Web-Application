@@ -1,17 +1,17 @@
 <?php
-namespace Spectre\User\Controller;
+namespace Spectre\User\Controller\Delete;
 
 // PSR 7 standard.
 use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
 
 use \Spectre\User\Controller\Controller;
-use \Spectre\User\Gateway\DeleteGateway;
-use \Spectre\User\Mapper\DeleteMapper;
+use \Spectre\User\Gateway\Delete\User as DeleteGateway;
+use \Spectre\User\Mapper\Delete\User as DeleteMapper;
 
-class DeleteController extends Controller
+class User extends Controller
 {
-    public function deleteUser(Request $request)
+    public function delete(Request $request)
     {
         // Get params and validate them here.
         $uuid = $request->getParam('uuid');
@@ -23,15 +23,10 @@ class DeleteController extends Controller
 
         $gateway = new DeleteGateway($this->database);
         $mapper = new DeleteMapper($gateway);
-        $model = $mapper->deleteUser([
+        $model = $mapper->delete([
             "uuid" => $uuid
         ]);
 
         return $model->toArray();
-    }
-
-    public function deleteUsers(array $args)
-    {
-        //
     }
 }
