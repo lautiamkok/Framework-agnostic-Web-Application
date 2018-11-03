@@ -2,7 +2,7 @@
 
 > Framework-agnostic web application
 
-A fundamental concept for creating a framework-agnostic web application. Read the ideas and motivations behind it:
+A minimal framework for framework-agnostic web applications. Read the ideas and motivations behind it:
 
 * [Nuxt: Decoupling the view and controller in your PHP application](https://www.codementor.io/lautiamkok/decoupling-the-view-and-controller-in-your-php-application-introducing-nuxt-c4awxbol0)
 
